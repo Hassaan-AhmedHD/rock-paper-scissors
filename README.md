@@ -16,6 +16,5 @@ This function uses a forEach loop to add an event listener to each button. The e
 
 
 
-##
-Conclusion:
+## Conclusion:
 The rock-paper-scissors game is a simple yet entertaining game that can be played between two people or between a person and a computer. This project demonstrates how HTML, CSS, and JavaScript can be used to create a functioning game that is easy to play and understand. The game is a great way to practice programming skills and experiment with different coding techniques.

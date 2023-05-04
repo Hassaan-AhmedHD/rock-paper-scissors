@@ -8,6 +8,9 @@ let userChoice;
 let result;
 let computerChoice;
 
+let userScore = 0;
+let computerScore = 0;
+
 // Use forEach loop to add an event listener to each button
 possibleChoices.forEach((button) => {
   button.addEventListener("click", (e) => {
@@ -30,6 +33,8 @@ function computerChoiceGenerator() {
 }
 
 function getResult() {
+  
+  determineWinner()
   if (computerChoice === userChoice) {
     result = "its a draw";
   }
@@ -37,7 +42,7 @@ function getResult() {
     result = "you win";
   }
   if (computerChoice === "rock" && userChoice === "scissors") {
-    result = "you lost";
+    result = "you lose";
   }
   if (computerChoice === "paper" && userChoice === "scissors") {
     result = "you win";
@@ -51,5 +56,26 @@ function getResult() {
   if (computerChoice === "scissors" && userChoice === "paper") {
     result = "you lose";
   }
+  
+  determineWinner(userChoice , computerChoice,result)
+  
   return result;
+  
+}
+
+
+
+
+// Inside the function that determines the winner, update the scores accordingly
+function determineWinner(userChoice, computerChoice,  result) {
+  console.log(`${userChoice} ${computerChoice} ${result}`);
+  
+  // ... determine the winner
+  if (result === 'you win') {
+    userScore++;
+    document.getElementById('user-score').textContent = userScore;
+  } else if (result === 'you lose') {
+    computerScore++;
+    document.getElementById('computer-score').textContent = computerScore;
+  }
 }
